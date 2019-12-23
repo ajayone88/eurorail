@@ -1,0 +1,48 @@
+.Footer{
+    position:fixed;
+    z-index: 10;
+    bottom:0px;
+    width:100%;
+    display:flex;
+    padding:12px;
+    height:38px;
+    justify-content: center;
+    background-color: #01C3A7;
+    border-top:2px solid black;
+}
+
+.Footer nav {
+    align-self:center;
+}
+
+
+
+nav ul {
+    margin:0px;
+    padding:0px;
+    list-style: none;
+    display: flex;
+
+}
+
+
+
+ul li{
+    margin:0 12px;
+}
+
+
+li:hover{
+    cursor:pointer;
+    color:white;
+}
+
+@media(max-width:768px){
+    .Footer{
+        height:20px;
+    }
+
+    .Footer nav {
+        align-self:center;
+    }
+}
