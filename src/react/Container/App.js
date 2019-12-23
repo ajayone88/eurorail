@@ -25,6 +25,11 @@ class App extends Component {
         })
     };
 
+    //Setting the Application Name
+    componentDidMount(){
+        document.title = "Euro Rail"
+    }
+
     //It consists of the Header , Footer ,and the Body which can be changed with the Rout (React Router).
     render(){
         return (

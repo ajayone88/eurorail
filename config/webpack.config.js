@@ -4,7 +4,7 @@ module.exports= {
     entry:{
         main:['@babel/polyfill','./src/main.js']
     },
-    mode:"production",
+    mode:"development",
     output:{
         filename:'bundle.js',
         path:path.resolve(__dirname, "../dist"),
