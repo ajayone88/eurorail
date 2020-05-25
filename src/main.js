@@ -1,7 +1,13 @@
-require('babel-runtime/regenerator');
-require('./index.html');
+require('webpack-hot-middleware/client?reload=true');
 require('./main.css');
-require('./react/Container/index.js');
 
-console.log("-------Everything Uploaded----------");
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'materialize-css/dist/css/materialize.min.css';
+import App from "./App";
+import "./App.css";
 
+ReactDOM.render(
+    <App />,
+    document.getElementById('react-root')
+);

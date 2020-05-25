@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Classes from "./Welcome.css";
 
 const Welcome = () =>{
     let welcomeClass = [];

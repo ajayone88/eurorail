@@ -1,5 +1,4 @@
 import React from 'react';
-import Classes from "./Tab.css";
 
 
 const Tab = (props) =>{

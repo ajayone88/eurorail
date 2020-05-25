@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Classes from './ContactList.css';
 import Tab from '../Tab/Tab';
 import TabDetails from '../TabDetails/TabDetails';
 import instance from '../../DataAcess/DataAccess';
@@ -253,13 +252,8 @@ class ContactList extends Component {
 
         return(
               <div className={Classes.ContactList}>
-
-                  <div
-                      className={Classes.TabHeader}>
-                      {alphabetsTab}</div>
-
+                  <div className={Classes.TabHeader}>{alphabetsTab}</div>
                   <div className={Classes.TabBody}>
-
                       <div className={Classes.TabSearch}>
                           <input
                               type="text"
@@ -268,7 +262,6 @@ class ContactList extends Component {
                               placeholder={'Search'} />
                           <span>{this.state.filteredContacts.length}</span>
                       </div>
-
                       <div className={Classes.TabBodyRow}>
 
                           <div
@@ -290,7 +283,6 @@ class ContactList extends Component {
                           </div>
 
                       </div>
-
                       <div className={Classes.TabButton}>
                           <div
                               style={{display: this.state.backButton}}
@@ -301,7 +293,6 @@ class ContactList extends Component {
                               onClick={this.goNext.bind(this)}>Next
                           </div>
                       </div>
-
                   </div>
               </div>
         )
