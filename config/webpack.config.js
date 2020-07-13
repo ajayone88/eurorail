@@ -1,10 +1,9 @@
-const path = require('path');
-const webpack  = require('webpack');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-module.exports= {
-    entry:{
-        main:['./src/main.js']
-    },
+import path from 'path';
+import webpack from 'webpack';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+
+const config = {
+    entry:['webpack-hot-middleware/client?reload=true', './src/index.js'],
     mode:"development",
     output:{
         filename:'[name]-bundle.js',
@@ -14,10 +13,9 @@ module.exports= {
     devServer: {
         contentBase:"/",
         overlay:true,
-        historyApiFallback: true,
         hot:true,
         stats:{
-            color:true
+            colors:true
         }
     },
     devtool: "sourcemap",
@@ -59,6 +57,9 @@ module.exports= {
                     },
                     {
                         loader:"css-loader",
+                        options:{
+                            modules:true
+                        }
                     }
                 ]
             },
@@ -78,8 +79,10 @@ module.exports= {
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
         new HTMLWebpackPlugin({
-            template:"./src/index.html"
+            template:"./src/index.html",
+            filename:'index.html'
         })
     ]
-
 };
+
+export default config;

@@ -4,9 +4,13 @@
       "@babel/preset-env",
       {
         "useBuiltIns": "usage",
-        "debug": false
+        "debug": false,
+        "corejs":3
       }
     ],
     "@babel/preset-react"
+  ],
+  "plugins":[
+    "@babel/plugin-proposal-class-properties"
   ]
 }

@@ -1,27 +1,26 @@
-const express = require('express');
+import express from 'express';
+import path from 'path';
+import webpack from 'webpack';
+import devMiddleware from 'webpack-dev-middleware';
+import hotMiddleware from 'webpack-hot-middleware';
+import config from '../config/webpack.config';
+
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
 
 //Dev Middleware
-const webpack = require('webpack');
-const config = require('../config/webpack.config');
 const compiler = webpack(config);
-const webpackDevMiddleware = require('webpack-dev-middleware')(
-    compiler,
-    config.devServer
-);
-app.use(webpackDevMiddleware);
+const devInstance = devMiddleware(compiler,config.devServer);
+app.use(devInstance);
 
 //Hot Middleware
-const webpackHotMiddleware = require('webpack-hot-middleware')(
-    compiler
-);
-app.use(webpackHotMiddleware);
+const hotInstance = hotMiddleware(compiler);
+app.use(hotInstance);
 
 //Static Middleware
-const staticMiddleware = express.static('dist');
+const staticMiddleware = express.static(path.resolve(__dirname, '../dist'));
 app.use(staticMiddleware);
 
 app.listen(port, ()=>{
-   console.log('This Application is listening at Port : - '+ port);
+   console.log(`Application is up and running on port ${port}`);
 });

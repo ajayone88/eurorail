@@ -4,10 +4,8 @@
   "description": "This is the assignment for the Euro rail.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config=config/webpack.config.js",
-    "dev": "webpack-dev-server --config=config/webpack.config.js",
-    "test": "jest --config=config/jest.config.js",
-    "start": "node ./server/express.js"
+    "build": "env-cmd -f ./config/dev.env webpack --config-register @babel/register --config=config/webpack.config",
+    "dev": "env-cmd -f ./config/dev.env nodemon --exec babel-node ./server/express.js"
   },
   "repository": {
     "type": "git",
@@ -21,18 +19,21 @@
   "homepage": "https://github.com/ajayone88/eurorail#readme",
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
-    "babel-jest": "^24.9.0",
+    "@babel/register": "^7.10.3",
     "babel-loader": "^8.1.0",
+    "chalk": "^4.1.0",
     "css-loader": "^3.5.3",
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "extract-loader": "^3.1.0",
     "file-loader": "^3.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^4.3.0",
-    "jest": "^24.9.0",
     "nodemon": "^2.0.4",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
@@ -42,7 +43,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "materialize-css": "^1.0.0-rc.2",
+    "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",

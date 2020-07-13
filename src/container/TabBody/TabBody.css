@@ -1,0 +1,27 @@
+.TabBody{
+    width:594px;
+    height:450px;
+    background-color: aquamarine;
+    border:1px solid green;
+    border-top: 1px solid aquamarine;
+    box-sizing: border-box;
+    padding:16px;
+}
+
+@media(max-width:768px){
+    .TabBody{
+        border-left: 1px solid aquamarine;
+        border-top: 1px solid green;
+        height:594px;
+        width:90%;
+    }
+}
+
+.UserInfo{
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:95%;
+    margin:auto;
+}

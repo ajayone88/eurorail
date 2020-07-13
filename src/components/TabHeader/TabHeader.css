@@ -1,0 +1,39 @@
+.TabHeader{
+    display:inline-block;
+    text-align: center;
+    border:1px solid green;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    width:20px;
+    height:20px;
+    background-color: aqua;
+    cursor:pointer;
+}
+
+.TabHeader:hover{
+    background-color:cadetblue;
+}
+
+.Selected{
+    background-color: aquamarine;
+    border-bottom: 1px solid aquamarine;
+}
+
+@media(max-width:768px){
+    .TabHeader{
+        display:block;
+        text-align: center;
+        border:1px solid green;
+        border-top-left-radius:5px;
+        border-bottom-left-radius:5px;
+        border-top-right-radius:0;
+        width:20px;
+        height:20px;
+        background-color: aqua;
+    }
+
+    .Selected{
+        background-color:aquamarine;
+        border-right: 1px solid aquamarine;
+    }
+}

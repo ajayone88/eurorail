@@ -1,0 +1,12 @@
+.Directory{
+    margin-top:60px;
+    display:flex;
+    flex-direction: column;
+}
+
+@media(max-width:768px){
+    .Directory{
+        width:90%;
+        flex-direction: row;
+    }
+}
